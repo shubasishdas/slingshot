@@ -11,7 +11,9 @@
 
 <body>
 
-    <img class="oouch yeah" src="https://source.unsplash.com/random/300x300" />
+    <img data-name="Jibon" class="oouch yeah" src="https://source.unsplash.com/random/300x300" />
+    <img data-name="Das" data-nickname="kikobor" class="custom" src="https://source.unsplash.com/random/300x300" />
+    <img data-name="Gupta" src="https://source.unsplash.com/random/300x300" />
     <div class="items">
         <p>01 Hi I'm a item</p>
         <div class="item">
@@ -44,14 +46,16 @@
     </div>
 
     <!--This style section is used for checking textContent and innerText properties-->
-    <!-- <style>
+    <style>
         h2 span {
             display: none;
         }
-    </style> -->
-    <style>
+
         .round {
             border-radius: 50%;
+            transition: all 2s;
+            transform: rotate(45deg) scale(2);
+            box-shadow: 0 0 30px black;
         }
     </style>
     <script src="./the-dom.js"></script>

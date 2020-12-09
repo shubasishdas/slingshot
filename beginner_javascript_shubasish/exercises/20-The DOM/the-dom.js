@@ -35,5 +35,22 @@
 
 const test = document.querySelector('.oouch');
 test.classList.remove('yeah');
-test.classList.toggle('round');
+// test.classList.toggle('round');
 console.log(test.classList);
+// function clickRound() {
+//   test.classList.toggle('round');
+// }
+// test.addEventListener('click', clickRound);
+test.alt = 'what a pic!';
+console.log(test.alt);
+// test.width = 200;
+// test.addEventListener('load', function () {
+//   console.log(test.naturalWidth);
+// });
+
+const custom = document.querySelector('.custom');
+console.log(custom.dataset);
+custom.addEventListener('click', function () {
+  alert(`hey ${custom.dataset.name} ${custom.dataset.nickname}`);
+  console.log(`hey ${custom.dataset.name} ${custom.dataset.nickname}`);
+});
