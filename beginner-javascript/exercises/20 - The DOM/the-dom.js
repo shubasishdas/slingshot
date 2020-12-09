@@ -16,6 +16,7 @@ console.log(imgs);
 console.log(p1);
 console.log(imgs01);
 
+
 const p = document.querySelector('article');
 const heading = p.querySelector('h2');
 console.log(p);

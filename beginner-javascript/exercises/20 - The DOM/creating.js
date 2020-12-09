@@ -5,14 +5,13 @@ creatingPara.dataset.name = 'awesome';
 console.log(creatingPara);
 
 const image01 = document.createElement('img');
-image01.src = "https://source.unsplash.com/random/300x300"
+image01.src = 'https://source.unsplash.com/random/300x300';
 image01.alt = 'awesome pic';
 console.log(image01);
 
 const mydiv = document.createElement('div');
 mydiv.classList.add('special02');
 console.log(mydiv);
-
 
 mydiv.appendChild(creatingPara);
 mydiv.appendChild(image01);
@@ -21,9 +20,9 @@ document.body.appendChild(mydiv);
 const heading = document.createElement('h2');
 heading.textContent = 'This is h2 heading';
 // mydiv.appendChild(heading);
-mydiv.insertAdjacentElement("beforebegin", heading);
+mydiv.insertAdjacentElement('beforebegin', heading);
 
-//Make following ordered and unordered list
+// Make following ordered and unordered list
 // <ul>
 // <li>One</li>
 // <li>two</li>

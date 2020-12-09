@@ -8,6 +8,7 @@ const myHTML = `
     <img src="${src}" alt="${desc}"/>
   </div>
 `;
+
 // item.innerHTML = `
 //     <div>
 //         <h2>How are you doin? </h2>
