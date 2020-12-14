@@ -9,7 +9,48 @@
 </head>
 
 <body>
+  <script>
+    function minju() {
+      console.log('minju---testing for timeout');
+    }
+    // console.log('start');
+    // setTimeout(minju, 500);
+    // console.log('end');
+    // setInterval(minju, 200);
 
+    function setImmediateInterval(functoRun, ms) {
+      // right away call that function
+      functoRun();
+      // run a regular interval
+      return setInterval(functoRun, ms);
+    }
+    // setImmediateInterval(minju, 2000);
+
+    function yoongi() {
+      console.log('yoongi---testing for timeout');
+    }
+    // setImmediateInterval(yoongi, 200);
+    // function destroy() {
+    //   document.body.innerHTML = `<p> DESTROYED </p>`;
+    // }
+    // const bombTimer = setTimeout(destroy, 5000);
+    // window.addEventListener('click', function () {
+    //   console.log('You clicked! just saved the world!!!');
+    //   clearTimeout(bombTimer);
+    // });
+
+    const bombTimer02 = setInterval(function () {
+      console.log('hello');
+      console.log('hi');
+    }, 100);
+    // window.addEventListener('click', function () {
+    //   console.log('You clicked! just saved the world!!!');
+    //   clearInterval(bombTimer02);
+    // });
+    setTimeout(function () {
+      clearInterval(bombTimer02);
+    }, 1000);
+  </script>
 </body>
 
 </html>

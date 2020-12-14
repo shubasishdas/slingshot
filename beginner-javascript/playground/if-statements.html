@@ -10,9 +10,152 @@
 
 <body>
   <script>
-    if (10 > 2) {
-      console.log('Yep');
+    // if (10 > 2) {
+    //   console.log('Yep');
+    // }
+
+    // function slugify(sentence, lowercase) {
+    //   const slug = sentence.replace(/\s/g, '-');
+    //   console.log(slug);
+    //   if (lowercase) {
+    //     return slug.toLowerCase();
+    //   }
+    //   return slug;
+    // }
+
+    // const name = 'minju';
+    // const nameList = ['ginju', 'minju', 'dinju', 'pinju'];
+    // console.log(name, nameList);
+    // const isAwesomeName = nameList.includes(name);
+    // const isAwesomeName = 'Minju Yoongi';
+    // console.log(isAwesomeName);
+    // if (isAwesomeName) {
+    //   console.log('Hello from Minju');
+    // }
+    // const name = 'wes';
+    // const last = 'bos';
+
+    // const isAwesomeName = 'awesome'.includes(name);
+    // if (isAwesomeName) {
+    //   console.log('SUPER COOL AWESOME NAME');
+    // }
+
+    // const values = [
+    //   [],
+    //   {},
+    //   1,
+    //   0,
+    //   -10,
+    //   null,
+    //   undefined,
+    //   {}.length,
+    //   [].length,
+    //   NaN,
+    //   'minju',
+    //   ' ',
+    //   '',
+    // ];
+    // console.group('truthy or falsy values');
+    // values.forEach((value) => {
+    //   if (value) {
+    //     console.log(value, 'is truthy');
+    //   } else {
+    //     console.log(value, 'is falsy');
+    //   }
+    // });
+    // console.groupEnd();
+
+    // console.log(name);
+    // console.log(!name);
+    // console.log(!!name);
+
+    // ternary
+
+    // In general
+
+    // const count = 2;
+    // let word;
+    // if (count === 1) {
+    //   word = 'item';
+    // } else {
+    //   word = 'items';
+    //
+    //     const sentence = `you have ${count} ${word} in your cart`;
+    //     console.log(sentence);
+    // }
+
+    // By ternary
+    // method 01
+
+    // const count = 2;
+    // const word = count === 1 ? 'item' : 'items';
+    // const sentence = `you have ${count} ${word} in your cart`;
+    // console.log(sentence);
+
+    // method 02
+    // const count = 353;
+    // const sentence = `you have ${count} item${count === 1 ? '' : 's'} in your cart`;
+    // console.log(sentence);
+
+    // const isMinju = true;
+    // function minju() {
+    //   console.log('Hi, minju from function');
+    // }
+    // isMinju ? minju() : null;
+
+    // function check1() {
+    //   return 'test';
+    // }
+    // function check2() {
+    //   return console.log('Runnng check');
+    // }
+    // function check3() {
+    //   return console.log('Runnng check');
+    // }
+    // if (check1()) {
+    //   console.log('all checks passed');
+    // }
+
+    // checking return something inside console.log()
+
+    // function check1() {
+    //   return console.log('Running check1');
+    // }
+    // function check2() {
+    //   return console.log('Runnng check2');
+    // }
+    // function check3() {
+    //   return console.log('Runnng check3');
+    // }
+    // if (check1()) {
+    //   console.log('all checks passed');
+    // } else {
+    //   console.log('console.log returns undefined value');
+    // }
+
+    // function check1() {
+    //   console.log('Runnng check');
+    //   return true;
+    // }
+    // function check2() {
+    //   console.log('Runnng check');
+    //   return false;
+    // }
+    // function check3() {
+    //   console.log('Runnng check');
+    //   return true;
+    // }
+    // if (check1() && check2() && check3()) {
+    //   console.log('all checks passed');
+    // } else{
+    //   console.log('some checks failed');
+    // }
+
+    const isMinju = true;
+    function minju() {
+      console.log('Hi, minju from function');
     }
+    !isMinju && minju();
   </script>
 </body>
 
