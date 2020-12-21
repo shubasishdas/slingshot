@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Censorship</title>
+  <link rel="stylesheet" href="bc1e3bbf9dd1088639b78bb3aa234410">
+</head>
+
+<body>
+  <div class="wrap">
+    <video class="webcam" muted=""></video>
+    <canvas class="video"></canvas>
+    <canvas class="face"></canvas>
+  </div>
+  <script src="f30aa89073cfc3729543891afa5b6665"></script>
+  <video id="video" preload="none" src="dd3e3ca3141fd1ee12cfd17b2bfd8748"></video>
+
+  <script data-parcel-key="53d5f167e1849d8984e7d716be172d8f">
+    // Show loading animation.
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then((_) => {
+          // Automatic playback started!
+          // Show playing UI.
+        })
+        .catch((error) => {
+          // Auto-play was prevented
+          // Show paused UI.
+        });
+    }
+  </script>
+
+  <style data-parcel-key="fd81cfd7e97c384a29afbf8c9176db9a">
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .wrap {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrap>* {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+
+    .face {
+      position: absolute;
+    }
+  </style>
+
+</body>
+
+</html>

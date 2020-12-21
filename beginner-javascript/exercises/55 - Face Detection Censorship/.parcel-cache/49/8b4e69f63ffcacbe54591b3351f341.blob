@@ -1,0 +1,65 @@
+// The face detection does not work on all browsers and operating systems.
+// If you are getting a `Face detection service unavailable` error or similar,
+// it's possible that it won't work for you at the moment.
+// console.log('works fine');
+const video = document.querySelector('.webcam');
+const canvas = document.querySelector('.video');
+const ctx = canvas.getContext('2d');
+const faceCanvas = document.querySelector('.face');
+const faceCtx = faceCanvas.getContext('2d');
+const faceDetector = new window.FaceDetector(); // console.log(video, canvas, faceCanvas, faceDetector);
+// ##
+// Prefer camera resolution nearest to 1280x720.
+
+const constraints = {
+  audio: true,
+  video: {
+    width: 1280,
+    height: 720
+  }
+};
+navigator.mediaDevices.getUserMedia(constraints).then(function (mediaStream) {
+  const video = document.querySelector('video');
+  video.srcObject = mediaStream;
+
+  video.onloadedmetadata = function (e) {
+    video.play();
+  };
+}).catch(function (err) {
+  console.log(`${err.name}: ${err.message}`);
+}); // always check for errors at the end.
+// ##
+// following function will populate the users video
+
+async function populateVideo() {
+  // stream variable grabs the feed of users webcam
+  const stream = await navigator.mediaDevices.getUserMedia({
+    // audio: true,
+    video: {
+      width: 1280,
+      height: 720
+    } // video: true,
+    // video: { width: 1920, height: 1080 },
+
+  }); //   console.log(stream);
+
+  video.srcObject = stream; // set the object to be stream
+
+  await video.play(); // size the canvases to be the same size as the video
+
+  console.log(video.videoWidth, video.videoHeight);
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  faceCanvas.width = video.videoWidth;
+  faceCanvas.height = video.videoHeight;
+}
+
+async function detect() {
+  const faces = await faceDetector.detect(video);
+  console.log(faces);
+  requestAnimationFrame(detect);
+} // console.log(populateVideo);
+
+
+populateVideo().then(detect);
+console.log('works fine');

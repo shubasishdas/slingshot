@@ -12,7 +12,19 @@
 
 <body>
   <script>
-    const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
+    const toppings = [
+      'Mushrooms ',
+      'Tomatoes',
+      'Eggs',
+      'Chili',
+      'Lettuce',
+      'Avocado',
+      'Chiles',
+      'Bacon',
+      'Pickles',
+      'Onions',
+      'Cheese',
+    ];
 
     const students = [
       {
@@ -67,32 +79,31 @@
         birthday: 'April 22, 1993',
         names: {
           first: 'Keith',
-          last: 'Buckley'
-        }
+          last: 'Buckley',
+        },
       },
       {
         birthday: 'January 3, 1975',
         names: {
           first: 'Larry',
-          last: 'Heep'
-        }
+          last: 'Heep',
+        },
       },
       {
         birthday: 'February 12, 1944',
         names: {
           first: 'Linda',
-          last: 'Bermeer'
-        }
-      }
+          last: 'Bermeer',
+        },
+      },
     ];
-
 
     const buns = ['egg', 'wonder', 'brioche'];
 
     const meats = {
       beyond: 10,
       beef: 5,
-      pork: 7
+      pork: 7,
     };
 
     const prices = {
@@ -124,12 +135,290 @@
       { type: 'pants', price: 123 },
     ];
 
-
     /*
       Looping Methods
     */
+    // function logTopping(topping) {
+    //   console.log(topping);
+    //   debugger;
+    // }
+    // toppings.forEach(logTopping);
+
+    // logging the next item of array
+    // toppings.forEach((topping, index, array) => {
+    // console.log(topping, index, array);
+    // console.log(
+    //   array,
+    //   ` index of ${topping} is  ${index} `,
+    //   `next index's value is ${array[index + 1]}`
+    // );
+
+    // const nextTopping = array[index + 1];
+    // if (nextTopping) {
+    //   console.log(nextTopping);
+    //   debugger;
+    // }
+    // nextTopping ? console.log(nextTopping) : null;
+    // console.log('----------------🍕-----------------');
+    // });
+
+    // log the previous topping
+    // toppings.forEach((topping, index, array) => {
+    //   const prevTopping = array[index - 1];
+    //   prevTopping ? console.log(prevTopping) : null;
+    //   console.log('----------------🍕-----------------');
+    // });
+
+    // toppings.forEach((topping, index, array) => {
+    //   const nextTopping = array[index + 1];
+    //   const prevTopping = array[index - 1];
+    //   console.log(topping);
+    //   prevTopping ? console.log(prevTopping) : null;
+    //   nextTopping ? console.log(nextTopping) : null;
+    // index === array.length - 1
+    //   ? console.log('GoodBye')
+    //   : console.log('Getting the next Topping');
+    // console.log('----------------🍕-----------------');
+
+    // index === array.lenth && console.log('Goodbye');
+    // console.log('----------------🍕-----------------');
+    // });
+
+    // console.clear();
+    // function addArms(face) {
+    //   // debugger;
+    //   return `✋ ${face} ✋`;
+    // }
+    // console.log(addArms('😃'));
+
+    // const toys = faces.map(addArms);
+    // debugger;
+    // console.log(toys);
+
+    // function surName(name) {
+    //   return `${name} Biswas`;
+    // }
+
+    // function capitalizeFirstWord(firstWord) {
+    // return firstWord[0].toUpperCase() + firstWord.slice(1);
+    //   return `${firstWord[0].toUpperCase()}${firstWord.slice(1)}`;
+    // }
+
+    // const dog = ['minju', 'yoongi'].map((name) => `${ name } biswas`);
+    // const dog = ['minju', 'yoongi'].map(capitalizeFirstWord).map(surName);
+    // console.log(dog);
+
+    // const orderTotalsWithTax = orderTotals.map((total) => 1);
+    // const orderTotalsWithTax = orderTotals.map((total) => total * 1.13);
+    // console.log(orderTotalsWithTax);
+
+    // Drawing face body
+    // function attachBody(face, body) {
+    //   return `
+    //           ${face}
+    // 　　　　　${body.repeat(3)}
+    // 　　　　 ${Array(3).fill(body).join(' ')}
+    // 　　　👇🏽　 ${body.repeat(2)}　👇🏽
+    //         ${Array(2).fill(body).join('   ')}
+    //         ${Array(2).fill(body).join('   ')}
+    // 　　　　　👢　　👢
+    //       `;
+    // }
+
+    // faces
+    //   .map((face) => attachBody(face, '🍟'))
+    //   .forEach((fullBody) => console.log(fullBody));
+
+    // console.log(people);
+    // let birthday = new Date(people.birthday); // show invalid date
+    // console.log(birthday);
+    // const cleanPeople = people.map(function (person) {
+    // console.log(person);
+    // const birthday = new Date(person.birthday);
+    // const birthday = new Date(person.birthday).getTime();
+    // console.log(birthday);
+    // console.dir(birthday); // dir to see all of the methods on Date object
+    // const now = new Date();
+    // const now = new Date().getTime();
+    // const now = Date.now();
+    // console.log(birthday, typeof birthday, now, typeof now);
+    // const age = Math.floor((now - birthday) / (1000 * 60 * 60 * 24 * 365));
+    // console.log(`age is ${age}`);
+    // return {
+    // age:age,
+    //     age,
+    //     name: `${person.names.first} ${person.names.last}`,
+    //   };
+    // });
+    // console.table(cleanPeople);
+
+    // console.log(Date.now() === new Date().getTime());
+
+    // const over40 = cleanPeople.filter(function (person) {
+    //   // console.log(person.age);
+    //   if (person.age > 40) {
+    //     return true;
+    //   }
+    //   return false;
+    // });
+
+    // const over40 = cleanPeople.filter((person) => person.age > 40);
+    // console.table(over40);
+    // if (over40.length) {
+    // console.log('There are some people over 40');
+    // }
+
+    // const add = [1];
+    // const overFourty = cleanPeople.map(function (person) {
+    //   person.age > 40 ? add.push(console.log(person)) : null;
+    // });
+    // console.table(add);
+
+    // find() only gives only one value where it matches the condition and stores the data as object
+    // const student1 = students.find((stud) => stud.id === '565a');
+    // console.log(student1);
+    // console.table(student1);
+
+    // const student = students.filter((stud) => stud.id === '565a');
+    // console.log(student);
+
+    // return all 9 values of students
+    // const student2 = students.filter((stud) => stud.id);
+    // console.log(student2);
+    // console.table(student2);
+    // console.table(students);
+
+    // const student3 = students.map((stud) => stud.id === '565a');
+    // console.log(student3);
+    // console.table(student3);
+
+    // function isStudent(student) {
+    //   return student.id === '565a';
+    // }
+    // const student = students.find(isStudent);
+    // console.log(student);
+
+    function findById(idNumber) {
+      debugger;
+      return function isStudent(student) {
+        debugger;
+        console.log(student);
+        return student.id === idNumber; // in this line student act as object, that's why we can access by dot
+      };
+    }
+
+    // const student = students.find(findById('565a'));
+    // console.log(student);
+
+
+    function findById(index, value) {
+      // debugger;
+      return function isStudent(student) {
+        // debugger;
+        return student[index] === value; // index acts as variable here, that's why using []
+      };
+    }
+    // const student2 = students.find(findById('first_name', 'Micki'));
+    // console.log(student2);
+
+    // const studentsList = [
+    //   {
+    //     id: '11ce',
+    //     first_name: 'Dall',
+    //     last_name: 'Puckring',
+    //   },
+    // ]
+    // console.log(studentsList.id); // show undefined value
+    // console.log(studentsList[id]); // not possible
+
+    //Reduce
+    let total = 0;
+    orderTotals.forEach(singleTotal => {
+      total += singleTotal;
+    });
+    // console.log(total);
+
+    function tallyNumbers(tally, currentTotal) {
+      console.log(`The current tally is ${tally}`);
+      console.log(`The current total is ${currentTotal}`);
+      console.log(`-------------`);
+      debugger;
+      return tally + currentTotal;
+    }
+    // debugger;
+
+    // const allOrders = orderTotals.reduce(tallyNumbers, 0);
+    // console.log(allOrders);
+
+    // const inventory = [
+    //   { type: 'shirt', price: 4000 },
+    //   { type: 'pants', price: 4532 },
+    //   { type: 'socks', price: 234 },
+    //   { type: 'shirt', price: 2343 },
+    //   { type: 'pants', price: 2343 },
+    //   { type: 'socks', price: 542 },
+    //   { type: 'pants', price: 123 },
+    // ];
+
+    function inventoryReducer(totals, item) {
+      debugger;
+      totals[item.type] = totals[item.type] + 1 || 1; // here statement shows for totals = {shirt:1};
+      // debugger;
+      console.log(item.type);
+      console.log(totals[item.type]);
+      console.log(totals);
+      // totals[item.type] ? totals[item.type] = totals[item.type] + 1 : totals[item.type] = 1; //DJ
+
+      // if (totals[item.type]) {
+      //   totals[item.type] = totals[item.type] + 1;
+      // } else {
+      //   totals[item.type] = 1;
+      // }
+
+      // console.log(totals[item.type]);
+      // totals.shirt ? totals.shirt + 1 : totals.shirt = 1;
+      return totals;
+    }
+    // const inventoryCounts = inventory.reduce(inventoryReducer, {});
+    // console.log(inventoryCounts);
+
+    // const totalInventoryPrice = inventory.reduce((acc, item) => acc + item.price, 0);
+    // console.log(totalInventoryPrice);
+
+    // Important
+    // const test01 = {};
+    // test01["e"] = 1;
+    // test01.b = 0;
+    // console.log(test01);
+
+    // const a = { b: 2, c: "e", d: 4 };
+    // const m = { e: 3 }
+    // console.log(a.b);
+    // console.log(m[a.c]);
+    // console.log(m.e === m['e'])
+    // console.log(m["e"]);
+
+    // const a = [{ b: 1, c: 2, d: 3 }, { e: 1, f: 2, g: 3 }]
+    // const b = [1, 2, 3, 4];
+    // let b = c;
+    //    a.forEach(element => console.log(element.b));
+    // console.log(a[b]);
+
+
+    // function inventoryReducer(totals, item) {
+    //   let p = 'type';
+    //   console.log(item[p]);
+    //   console.log(totals[item.type]);
+    //   return totals;
+    // }
+    // const inventoryCounts = inventory.reduce(inventoryReducer, {});
+    // console.log(inventoryCounts);
+
+
 
   </script>
+
+
 </body>
 
 </html>

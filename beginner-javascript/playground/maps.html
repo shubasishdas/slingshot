@@ -9,8 +9,64 @@
 </head>
 
 <body>
+  <ul class="result"></ul>
   <script>
+    const dog = {
+      dog1: 'minju',
+      dog2: 'yoongi',
+      'dog1-age': 7, // dash between string modification in object perperty
+      'dog2-age': 8,
+      'dog1 cool': true, // space between string modification in object perperty
+      'dog2 cool': true,
+      propertyToCheck: true,
+      999: false,
+      dogClothing: {
+        // nested object
+        'dog1-shirt-color': 'white',
+        'dog2-shirt-color': 'red',
+      },
+    };
 
+    const myMap = new Map();
+    myMap.set('name', 'minju'); // show as entry
+    myMap.set(100, 'random number'); // any number, string can be placed in "key" position, differnce from object
+    myMap.age = '8 months'; // show as property not as entry
+    myMap.set(dog, 'cool');
+    console.log(myMap);
+    // console.log(myMap.get(dog));
+    // console.log(myMap.size);
+
+    const score = 80;
+    const results = new Map();
+    results.set(60, 'B');
+    results.set(70, 'A-');
+    results.set(80, 'A+');
+    // console.log(`you got ${result.get(score)}`);
+
+    const ul = document.querySelector('.result');
+    // result.forEach((entry) => {
+    //   console.log(entry);
+    // });
+
+    // for (const result of results) {
+    //   // console.log(result);
+    //   console.log(result[0], result[1]);
+    // }
+
+    // for (const [point, result] of results) {
+    //   // console.log(result);
+    //   console.log(point, result);
+    // }
+
+    for (const [point, result] of results) {
+      // console.log(result);
+      const li = `<li> ${point} -${result}</li>`;
+      ul.insertAdjacentHTML('beforeend', li);
+      // console.log(point, result);
+    }
+    console.log(results);
+    results.delete(70);
+    console.log(results);
   </script>
 </body>
 

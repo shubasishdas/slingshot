@@ -14,13 +14,54 @@
 
     const name = 'Wes Bos';
 
+    const dogName = { dog1: 'minju', dog2: 'yoongi' };
     // For
+    for (let i = 0; i < numbers.length; i++) {
+      // console.log(numbers[i]);
+    }
 
     // For of
+    for (const number of numbers) {
+      // console.log(number);
+    }
+    // For in --- used for looping over keys of an object
+    for (const number in numbers) {
+      // console.log(number);
+    }
+    for (const dog in dogName) {
+      // console.log(dog);
+    }
+    const baseHumanStats = {
+      feet: 2,
+      arms: 2,
+      eyes: 2,
+      head: 1,
+    };
+    function human(name) {
+      this.name = name;
+    }
+    human.prototype = baseHumanStats;
+    const wes2 = new human('wes');
 
-    // For in
+    // console.log(Object.keys(wes2));
+    // console.log(Object.entries(wes2));
+    for (keys in wes2) {
+      console.log(keys);
+    }
 
     // While Loop
+    let i = 0;
+    while (i !== 101) {
+      i++;
+      // console.log(i);
+    }
+
+    // do while executes do section first then goes to while condition
+    let j = 0;
+    do {
+      j++;
+      console.log(j);
+    } while (j < 101);
   </script>
 </body>
 

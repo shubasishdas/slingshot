@@ -9,8 +9,152 @@
 </head>
 
 <body>
-  <script>
+  <input type="text" name="first" value="minju">
 
+  <script src="https://unpkg.com/lodash"></script> // lodash
+
+  <script>
+    const dog = {
+      dog1: 'minju',
+      dog2: 'yoongi',
+      'dog1-age': 7, // dash between string modification in object perperty
+      'dog2-age': 8,
+      'dog1 cool': true, // space between string modification in object perperty
+      'dog2 cool': true,
+      propertyToCheck: true,
+      999: false,
+      dogClothing: {
+        // nested object
+        'dog1-shirt-color': 'white',
+        'dog2-shirt-color': 'red',
+        peek: 5,
+      },
+
+      // sayHello: function (greeting = 'Hey') {
+      //   return `${greeting} ${this.dog1}`;
+      // },
+
+      sayHello(greeting = 'Hey') {
+        return `${greeting} ${this.dog1}`;
+      },
+
+      // arrow function will not scope 'this'
+      sayFood: () => {
+        console.log('khabo khabo', this);
+      },
+      sayFood1() {
+        console.log('khabo khabo', this);
+      },
+    };
+
+    // const '999' = 211;         //not possible in variable declaration
+    // const d-2 = 343;
+    // console.log('999');
+
+    // dog.'dog1-origin' = 'china';         // not possible of declaration with dash outside of object
+    // dog.'dog2-origin' = 'england';
+
+    // const origin1 = 'dog1-origin';
+    // const origin2 = 'dog2-origin';
+
+    // dog.origin1 = 'china'; // this line is not assigning the value for previous two line
+    // dog.origin2 = 'england';
+
+    // console.log(dog);
+
+    // dog = {        // not possible cause dog object is defined as const previously
+    //   name: 'shinju',
+    // };
+
+    // const dogFroze = Object.freeze(dog); // freeze the object so that the properties & value can't modified
+    // dog.dog1Scent = true;
+    // dog.dog2Scent = false;
+    // console.log(dog, dogFroze);
+
+    // Object.freeze(dog); // freeze the object so that the properties & value can't modified
+    // dog.dog1Scent = true;
+    // dog.dog2Scent = false;
+
+    // const propertyToCheck = prompt('what do you want to check?');
+    // console.log(propertyToCheck);
+    // console.log(dog[propertyToCheck]);        // show the value for object properties which will match to the input
+    // console.log(dog.propertyToCheck);        // show the value for propertyToCheck which is listed in object
+    // console.log(dog.dogClothing['dog1-shirt-color']);        // show object's nested value
+    // console.log(dog.name ? dog.name : "doesn't exist");        // ternary method
+    // console.log(dog ? .dog1 ? .'exist');         // doesn't exist anymore
+
+    const nameInput = document.querySelector('[name="first"');
+    // const name = nameInput.value;
+    // console.log(name);
+    const name = nameInput ? nameInput.value : '';
+    console.log(name);
+
+    // console.log(delete dog.dog2);
+    // console.log(dog);
+    // console.log(dog.sayFood);
+    // console.log(dog.sayFood1);
+
+    const name1 = 'minju';
+    let name2 = 'yoongi';
+    name2 = 'minju';
+    console.log(name1 === name2);
+
+    const dog1 = {
+      first: 'minju',
+      last: 'biswas',
+      dogClothing: {
+        color: 'green',
+      },
+    };
+
+    const dog2 = {
+      first: 'minju',
+      last: 'biswas',
+    };
+    // console.log(dog1 === dog2);
+    // const dog3 = dog1;
+    // console.log(dog3);
+    // dog3.first = 'james';
+    // dog1.first = 'james';
+    // console.log(dog3);
+    // console.log(dog1);
+    // console.log(dog3.first);
+    // console.log(dog1.first);
+
+    // const dog3 = { ...dog1 };      // shadow deep, not capable to copy of nested object
+    // dog3.first = 'james';
+    // console.log(dog3);
+    // console.log(dog1);
+    // console.log(dog3);
+    const dog3 = _.cloneDeep(dog1); // deep clone, copy all properties of object
+    dog3.dogClothing.color = 'yellow';
+    // console.log(dog3);
+    // console.log(dog1);
+
+    const FoodLoverBd = {
+      bestFood: 'Kalavuna',
+      bestHotel: 'PachVai',
+      country: 'bd',
+    };
+
+    const TravelLoverBd = {
+      bestPlace: 'Nepal',
+      bestFlight: 'Emirates',
+      country: 'BANGLADESH',
+    };
+
+    const chill = {
+      ...FoodLoverBd,
+      ...TravelLoverBd,
+      country: 'bangladesh',
+    };
+    // console.log(chill);
+
+    function meditation(name) {
+      name.meditationType = 'mindfulness'; // value of object(chill) is modifying in this stage
+      console.log(name);
+    }
+    meditation(chill);
   </script>
 </body>
 
