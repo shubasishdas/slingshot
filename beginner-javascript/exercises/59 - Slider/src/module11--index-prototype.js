@@ -1,4 +1,4 @@
-// Mudule 11--video 5
+// Mudule 11---video 5
 
 function Slider(slider) {
   //   if (!slider) {
