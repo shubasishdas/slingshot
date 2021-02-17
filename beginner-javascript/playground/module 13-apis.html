@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>APIs</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <!-- video 74 -->
+  <p class="user"></p>
+  <script>
+    // function handleError(err) {
+    //   console.log('Oh no!');
+    //   console.log(err);
+    // }
+    // const endpoint = 'https://api.github.com/users/wesbos';
+    // const wesPromise = fetch(endpoint); // fetch will transform it as promise and show response as output
+    // // console.log(wesPromise);
+    // const userEl = document.querySelector('.user');
+    // userEl.textContent = 'loading .....';
+    // wesPromise
+    //   .then((data) => {
+    //     console.log(data); // give a response as output
+    //     return data.json(); // convert JSON to JS object
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //     console.log(data.blog);
+    //     console.log(data.name);
+    //     console.log(data.location);
+    //     userEl.textContent = `${data.name} - ${data.blog}`;
+    //   })
+    //   .catch(handleError);
+
+    const baseEndpoint = 'https://api.github.com';
+    const userEndpoint = `${baseEndpoint}/users`;
+    const userEl = document.querySelector('.user');
+
+    async function displayUser(userName) {
+      userEl.textContent = 'loading .....';
+      const response = await fetch(`${userEndpoint}/${userName}`); // fetch will transform it as promise and show response as output
+      const data = await response.json(); // convert JSON to JS object
+      console.log(data);
+      console.log(data.blog);
+      console.log(data.name);
+      console.log(data.location);
+      userEl.textContent = `${data.name} - ${data.blog}`;
+    }
+
+    function handleError(err) {
+      console.log('Oh no!');
+      console.log(err);
+      userEl.textContent = `somethiing wenr wring: ${err}`;
+    }
+
+    // displayUser('test');
+    // displayUser('wesbos');
+    // displayUser('wrongstolinski').catch(handleError);
+    // displayUser('wrongstolinski').catch(handleError);
+    displayUser('stolinski').catch(handleError);
+  </script>
+</body>
+
+</html>
